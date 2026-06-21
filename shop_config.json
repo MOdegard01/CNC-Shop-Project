@@ -1,0 +1,21 @@
+{"dept_1_work_centers": [
+    {"Number": 1, "Steel": true, "Aluminum": true},
+    {"Number": 2, "Steel": false, "Aluminum": true},
+    {"Number": 3, "Steel": true, "Aluminum": false}
+],
+"dept_2_work_centers": [
+    {"Number": 4, "Weld_Steel": true, "Weld_Aluminum": true},
+    {"Number": 5, "Weld_Steel": false, "Weld_Aluminum": true},
+    {"Number": 6, "Weld_Steel": true, "Weld_Aluminum": false}
+],
+"dept_3_work_centers": [
+    {"Number": 7, "Assembly_A": true, "Assembly_B": false, "Assembly_C": true},
+    {"Number": 8, "Assembly_A": true, "Assembly_B": true, "Assembly_C": false}
+],
+"dept_4_work_centers": [
+    {"Number": 9, "Saw_A": true, "Saw_B": false},
+    {"Number": 10, "Saw_A": false, "Saw_B": true}
+]}
+
+###This layout reprents a shop with 3 CNC Mills, 3 fabrication stations, 2 assembly stations, and 2 stock saws.
+The capabilities of each station are built into the values in the file.
