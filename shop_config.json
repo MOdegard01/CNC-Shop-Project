@@ -16,6 +16,3 @@
     {"Number": 9, "Saw_A": true, "Saw_B": false},
     {"Number": 10, "Saw_A": false, "Saw_B": true}
 ]}
-
-###This layout reprents a shop with 3 CNC Mills, 3 fabrication stations, 2 assembly stations, and 2 stock saws.
-The capabilities of each station are built into the values in the file.
