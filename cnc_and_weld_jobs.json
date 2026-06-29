@@ -1,0 +1,112 @@
+[
+  {
+    "job_number": "1001",
+    "part_number": "2001",
+    "stock_material": "steel",
+    "due_date": "2026-07-15",
+    "operations": [
+      {"op_seq": 1, "department": 1, "setup_time": 3.25, "run_time": 12.50},
+      {"op_seq": 2, "department": 2, "setup_time": 5.10, "run_time": 18.75},
+      {"op_seq": 3, "department": 1, "setup_time": 2.80, "run_time": 9.00}
+    ]
+  },
+  {
+    "job_number": "1002",
+    "part_number": "2002",
+    "stock_material": "aluminum",
+    "due_date": "2026-07-16",
+    "operations": [
+      {"op_seq": 1, "department": 2, "setup_time": 7.80, "run_time": 28.75},
+      {"op_seq": 2, "department": 1, "setup_time": 4.20, "run_time": 11.30},
+      {"op_seq": 3, "department": 2, "setup_time": 6.15, "run_time": 22.40}
+    ]
+  },
+  {
+    "job_number": "1003",
+    "part_number": "2003",
+    "stock_material": "steel",
+    "due_date": "2026-07-14",
+    "operations": [
+      {"op_seq": 1, "department": 2, "setup_time": 5.90, "run_time": 14.20},
+      {"op_seq": 2, "department": 2, "setup_time": 3.45, "run_time": 19.60},
+      {"op_seq": 3, "department": 1, "setup_time": 2.10, "run_time": 8.75}
+    ]
+  },
+  {
+    "job_number": "1004",
+    "part_number": "2004",
+    "stock_material": "aluminum",
+    "due_date": "2026-07-18",
+    "operations": [
+      {"op_seq": 1, "department": 1, "setup_time": 4.65, "run_time": 17.30},
+      {"op_seq": 2, "department": 1, "setup_time": 2.45, "run_time": 10.80},
+      {"op_seq": 3, "department": 2, "setup_time": 6.90, "run_time": 25.10}
+    ]
+  },
+  {
+    "job_number": "1005",
+    "part_number": "2005",
+    "stock_material": "steel",
+    "due_date": "2026-07-17",
+    "operations": [
+      {"op_seq": 1, "department": 2, "setup_time": 8.90, "run_time": 22.60},
+      {"op_seq": 2, "department": 1, "setup_time": 3.75, "run_time": 13.40},
+      {"op_seq": 3, "department": 2, "setup_time": 5.30, "run_time": 29.10}
+    ]
+  },
+  {
+    "job_number": "1006",
+    "part_number": "2006",
+    "stock_material": "aluminum",
+    "due_date": "2026-07-15",
+    "operations": [
+      {"op_seq": 1, "department": 1, "setup_time": 2.90, "run_time": 5.80},
+      {"op_seq": 2, "department": 2, "setup_time": 7.15, "run_time": 16.90},
+      {"op_seq": 3, "department": 1, "setup_time": 4.30, "run_time": 11.20}
+    ]
+  },
+  {
+    "job_number": "1007",
+    "part_number": "2007",
+    "stock_material": "steel",
+    "due_date": "2026-07-19",
+    "operations": [
+      {"op_seq": 1, "department": 2, "setup_time": 6.30, "run_time": 24.50},
+      {"op_seq": 2, "department": 2, "setup_time": 4.85, "run_time": 17.60},
+      {"op_seq": 3, "department": 1, "setup_time": 3.10, "run_time": 9.30}
+    ]
+  },
+  {
+    "job_number": "1008",
+    "part_number": "2008",
+    "stock_material": "aluminum",
+    "due_date": "2026-07-14",
+    "operations": [
+      {"op_seq": 1, "department": 1, "setup_time": 5.75, "run_time": 14.20},
+      {"op_seq": 2, "department": 2, "setup_time": 8.40, "run_time": 27.80},
+      {"op_seq": 3, "department": 1, "setup_time": 2.60, "run_time": 7.90}
+    ]
+  },
+  {
+    "job_number": "1009",
+    "part_number": "2009",
+    "stock_material": "steel",
+    "due_date": "2026-07-16",
+    "operations": [
+      {"op_seq": 1, "department": 1, "setup_time": 9.15, "run_time": 8.45},
+      {"op_seq": 2, "department": 2, "setup_time": 3.60, "run_time": 20.30},
+      {"op_seq": 3, "department": 1, "setup_time": 4.95, "run_time": 15.70}
+    ]
+  },
+  {
+    "job_number": "1010",
+    "part_number": "2010",
+    "stock_material": "aluminum",
+    "due_date": "2026-07-20",
+    "operations": [
+      {"op_seq": 1, "department": 2, "setup_time": 6.75, "run_time": 24.00},
+      {"op_seq": 2, "department": 1, "setup_time": 2.90, "run_time": 10.60},
+      {"op_seq": 3, "department": 2, "setup_time": 5.45, "run_time": 18.35}
+    ]
+  }
+]
