@@ -22,3 +22,9 @@ This set of scripts will take files built to model the work centers in a mock-up
 
 This layout reprents a shop with 3 CNC Mills, 3 fabrication stations, 2 assembly stations, and 2 stock saws.
 The capabilities of each station are built into the values in the file.
+
+#-----------------------------------------------------
+#   Updated Approach 7/12
+#-----------------------------------------------------
+
+Goals remain the same, but changing script strategy to use one JSON file (shop config) and base jobs off of user inputs
