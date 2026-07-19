@@ -40,7 +40,11 @@ update that file to serve as a master list of jobs entered.
 Overall Strategy ----
 
 Starting Files:
+
     alljobs.json                (an empty array that gets updated to show all entered jobs with each script run)
+
     update_schedule.ipynb       (a script that generates user-input prompts for job information and schedules the jobs entered)
+
     cnc_and_weld_jobs.json      (a sample of jobs that can be used to test the scripts for scheduling)
+    
     shop_config.json            (a digital representation of available work centers in the shop and what they can do)
