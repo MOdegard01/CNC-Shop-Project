@@ -41,10 +41,16 @@ Overall Strategy ----
 
 Starting Files:
 
-    alljobs.json                (an empty array that gets updated to show all entered jobs with each script run)
+    alljobs.csv                 (a csv with only a header row starting off -- gets updated to show all entered jobs with each script run)
 
     update_schedule.ipynb       (a script that generates user-input prompts for job information and schedules the jobs entered)
 
     cnc_and_weld_jobs.json      (a sample of jobs that can be used to test the scripts for scheduling)
     
     shop_config.json            (a digital representation of available work centers in the shop and what they can do)
+
+#-----------------------------------------------------
+#     Corrected starting files 7/19
+#-----------------------------------------------------
+
+Corrected a silly mistake -- alljobs.csv instead of alljobs.json. Rather than an empty array, it will be a header row only to start off.
