@@ -50,7 +50,9 @@ Starting Files:
     shop_config.json            (a digital representation of available work centers in the shop and what they can do)
 
 #-----------------------------------------------------
-#     Corrected starting files 7/19
+#Corrected initial files/wrote data entry logic 7/19
 #-----------------------------------------------------
 
 Corrected a silly mistake -- alljobs.csv instead of alljobs.json. Rather than an empty array, it will be a header row only to start off.
+
+Finished logic for collecting data from user for jobs to be scheduled. Next step is pulling jobs back into script from alljobs.csv and building a schedule from them.
