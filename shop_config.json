@@ -2,7 +2,7 @@
   {"number": 1, "department": 1, "capabilities": ["steel", "aluminum"]},
   {"number": 2, "department": 1, "capabilities": ["aluminum"]},
   {"number": 3, "department": 1, "capabilities": ["steel"]},
-  {"number": 4, "department": 2, "capabilities": ["weld_steel", "weld_aluminum"]},
-  {"number": 5, "department": 2, "capabilities": ["weld_aluminum"]},
-  {"number": 6, "department": 2, "capabilities": ["weld_steel"]}
+  {"number": 4, "department": 2, "capabilities": ["steel", "aluminum"]},
+  {"number": 5, "department": 2, "capabilities": ["aluminum"]},
+  {"number": 6, "department": 2, "capabilities": ["steel"]}
 ]
