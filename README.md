@@ -1,58 +1,64 @@
----CNC Shop Schedule---
+#  IN PROGRESS
 
-A JSON and CSV based shop scheduling program.
+# CNC Shop Scheduler
 
----Core Idea---
+A Python-based job scheduling system that simulates how an ERP might route CNC shop
+work orders to work centers. Built as a portfolio project during a transition from
+CNC machine operation into data analytics.
 
-This set of scripts will take files built to model the work centers in a mock-up CNC shop, and allow for files representing job submissions that populate the work center schedules.
+# What it does
 
----Goals---
+1. JOB ENTRY - a script collects a new job order (job number, part number,
+   material, due date, and one or more operations) via input prompts and logs it
+   to `schedule.csv`. At this point in the script, no WC or Start Time is chosen yet.
+2. WORK CENTER MATCHING - each operation is matched against
+   `shop_config.json` to find work centers in the right department that can run
+   the given material.
+3. SCHEDULING — a greedy scheduler assigns each operation to a work center and
+   computes a start time based on when that work center is next free and when the
+   prior operation in the same job finishes. Results are appended to
+   `schedule.csv`, which is the single source of truth for machine availability.
 
-1. Accomodate for work center capabilities
+# Why it's built this way
 
-2. Account for setup and run times of part orders
+**Flat work center list instead of nested by department.**
+The original config nested work centers under `dept_1_work_centers` /
+`dept_2_work_centers`, which forced department-specific branching in code. It's
+now a single flat list where each work center carries its own `department` and a
+`capabilities` list (e.g. `["steel", "aluminum"]`). Adding a work center, a
+department, or a material no longer requires touching the matching logic — the
+loop just checks `wc["department"] == target` and `material in wc["capabilities"]`.
 
-3. Sequence jobs on work centers to meet due dates as necessary
+**Datetime objects instead of integer ticks.**
+An earlier version modeled time as a tick-based calendar. The current version
+assumes 24/7/365 operation and uses plain `datetime`/`timedelta` objects instead.
+This is a deliberate simplification: shop hours, breaks, and holidays are real
+requirements but are being deferred until the core scheduling logic is proven out.
+Ticks will likely come back once that layer is added.
 
-4. Update a running job schedule and display a visualization
+**Raw setup/run time instead of a computed finish time.**
+`schedule.csv` stores `Setup Time` and `Run Time` directly rather than a
+precomputed `Finish` column. A stored finish time is derived data that can drift
+from the values it was computed from if either changes. Finish time is instead
+recomputed wherever it's needed (e.g. `start + timedelta(hours=setup+run)`),
+which is slightly more computation but removes an entire class of consistency bugs.
 
-5. Flag bottlenecks or scheduling conflicts in machine availability that create timelines that cannot be met according to logged run times of submitted jobs
+## How to run
 
----Current Shop Being Modeled---
+1. Run the job entry script and answer the prompts for a new job. This appends
+   the job's operations to `alljobs.csv` and holds them in memory as `new_rows`.
+2. The scheduler reads `schedule.csv` to reconstruct each work center's current
+   availability, matches each operation against `shop_config.json`, and assigns a
+   work center and start time to each operation.
+3. The completed rows are appended to `schedule.csv`.
 
-This layout reprents a shop with 3 CNC Mills, 3 fabrication stations, 2 assembly stations, and 2 stock saws.
-The capabilities of each station are built into the values in the file.
+Each run re-reads `schedule.csv` before scheduling, so work center availability
+stays consistent across separate runs without needing to keep state in memory
+between sessions.
 
-#-----------------------------------------------------
-#   Updated Approach 7/12
-#-----------------------------------------------------
+## Status
 
-Goals remain the same, but changing script strategy to use one JSON file (shop config) and base jobs off of user inputs
-
-#-----------------------------------------------------
-#    Updated Strategy 7/18
-#-----------------------------------------------------
-
-Jobs will still be user inputs, but a JSON file of job information will be included to be a sample of job info that 
-can be used to test the script. A third JSON file will be saved as an empty array, and each run of the scheduling script will 
-update that file to serve as a master list of jobs entered. 
-
-Overall Strategy ----
-
-Starting Files:
-
-    alljobs.csv                 (a csv with only a header row starting off -- gets updated to show all entered jobs with each script run)
-
-    update_schedule.ipynb       (a script that generates user-input prompts for job information and schedules the jobs entered)
-
-    cnc_and_weld_jobs.json      (a sample of jobs that can be used to test the scripts for scheduling)
-    
-    shop_config.json            (a digital representation of available work centers in the shop and what they can do)
-
-#-----------------------------------------------------
-#Corrected initial files/wrote data entry logic 7/19
-#-----------------------------------------------------
-
-Corrected a silly mistake -- alljobs.csv instead of alljobs.json. Rather than an empty array, it will be a header row only to start off.
-
-Finished logic for collecting data from user for jobs to be scheduled. Next step is pulling jobs back into script from alljobs.csv and building a schedule from them.
+Job entry prompts and work center candidates is functdional, next step is 
+selecting from the "candidates" list to pick a work center. Not yet built:
+shop hours / breaks / holidays, due-date-aware prioritization, and handling for
+jobs with no valid candidate work center.
