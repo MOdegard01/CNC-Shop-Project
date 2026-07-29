@@ -1,8 +1,8 @@
 [
-  {"number": 1, "department": 1, "capabilities": ["steel", "aluminum"]},
-  {"number": 2, "department": 1, "capabilities": ["aluminum"]},
-  {"number": 3, "department": 1, "capabilities": ["steel"]},
-  {"number": 4, "department": 2, "capabilities": ["steel", "aluminum"]},
-  {"number": 5, "department": 2, "capabilities": ["aluminum"]},
-  {"number": 6, "department": 2, "capabilities": ["steel"]}
+  {"number": 1, "department": 1, "capabilities": ["stl", "alm"]},
+  {"number": 2, "department": 1, "capabilities": ["alm"]},
+  {"number": 3, "department": 1, "capabilities": ["stl"]},
+  {"number": 4, "department": 2, "capabilities": ["stl", "alm"]},
+  {"number": 5, "department": 2, "capabilities": ["alm"]},
+  {"number": 6, "department": 2, "capabilities": ["stl"]}
 ]
