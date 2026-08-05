@@ -58,7 +58,9 @@ between sessions.
 
 ## Status
 
-Job entry prompts and work center candidates is functdional, next step is 
-selecting from the "candidates" list to pick a work center. Not yet built:
+Job placement is functional. Operation sequences will not overlap on a work center, and
+operations within a given job will not overlap each other or lose sequence.
+
+Not yet built:
 shop hours / breaks / holidays, due-date-aware prioritization, and handling for
 jobs with no valid candidate work center.
