@@ -33,9 +33,11 @@ CNC machine operation into data analytics.
 1. Flattened Work Center List
 
 The original config nested work centers under 'dept_1_work_centers', 'dept_2_work_centers', 
-which forced department-specific branching in the coding logic. It's now a single flat 
+etc. (which was an easily interpreted visual structure in json format), but it forced 
+department-specific branching in the coding logic. It's now a single flat 
 list where each work center carries the dept and capabilities as attributes. This prevents 
-the need for 
+the need for additional layers of code to unwrap the dictionary format of data from 
+shop_config.json when it's pulled into the script.
 
 2. Datetime Objects without Integer "Ticks"
 
